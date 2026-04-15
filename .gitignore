@@ -6,3 +6,4 @@ library.db
 uploads/covers/*
 !uploads/covers/.gitkeep
 *.DS_Store
+logs/

@@ -33,11 +33,12 @@ Aplicação web local para catalogar e gerenciar sua coleção de livros. Desenv
 
 | Camada | Tecnologia |
 |--------|-----------|
-| Backend | Python 3 + Flask |
+| Backend | Python 3 + Flask + Gunicorn |
 | Banco de dados | SQLite 3 (com FTS5 para busca) |
 | Frontend | HTML/CSS + JavaScript vanilla |
 | Gráficos | Chart.js (via CDN) |
 | Fonte | Gill Sans (nativa no sistema) |
+| Observabilidade | OpenTelemetry (traces + métricas via OTLP HTTP) |
 
 Sem npm, sem build step, sem banco de dados externo. Um único comando para rodar.
 
@@ -86,8 +87,10 @@ Acesse `http://localhost:5001` no navegador.
 biblioteca-pessoal/
 ├── app.py                  # Servidor Flask — todas as rotas e lógica de upload
 ├── database.py             # Schema do banco, tabela FTS e triggers de sincronização
-├── requirements.txt        # Dependências Python (flask, werkzeug)
+├── otel_config.py          # Configuração OpenTelemetry (traces + métricas)
+├── requirements.txt        # Dependências Python
 ├── start.sh                # Script de inicialização rápida
+├── logs/                   # Logs do gunicorn (não versionados)
 │
 ├── uploads/
 │   └── covers/             # Imagens de capa enviadas pelos usuários
@@ -182,6 +185,41 @@ Colunas exportadas: `ID`, `Título`, `Autor`, `Gênero`, `Editora`, `Ano`, `Tipo
 Os dados ficam em `library.db` (SQLite), criado automaticamente na primeira execução. Faça backup copiando esse arquivo — ele contém toda a biblioteca.
 
 As capas ficam em `uploads/covers/`. Para backup completo, copie também essa pasta.
+
+---
+
+## Observabilidade
+
+A aplicação está instrumentada com OpenTelemetry e envia **traces** e **métricas** via OTLP HTTP.
+
+### Configuração (`otel_config.py`)
+
+| Variável de ambiente | Padrão | Descrição |
+|----------------------|--------|-----------|
+| `OTEL_SERVICE_NAME` | `library-portal` | Nome do serviço no Jaeger/Prometheus |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | `http://localhost:4318` | Endpoint do OpenTelemetry Collector |
+| `OTEL_ENV` | `local` | Ambiente (`local`, `prod`, etc.) |
+
+### Spans manuais
+
+Além da auto-instrumentação do Flask e SQLite, há spans de negócio em:
+
+| Span | Endpoint | Atributos |
+|------|----------|-----------|
+| `books.create` | `POST /api/books` | `book.type`, `book.status` |
+| `books.export_csv` | `GET /api/export/csv` | — |
+| `books.stats` | `GET /api/stats` | — |
+
+### Como usar com collector no Kubernetes
+
+```bash
+# Mantenha esse terminal aberto enquanto usa a aplicação
+kubectl port-forward svc/otel-collector 4318:4318 -n monitoring-lab
+```
+
+Depois navegue em `http://biblioteca.local` e procure pelo serviço **`library-portal`** no Jaeger.
+
+Se o collector não estiver acessível, a aplicação continua funcionando normalmente — os exporters fazem retries silenciosos em background.
 
 ---
 
