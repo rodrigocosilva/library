@@ -1,0 +1,231 @@
+[2026-04-14 22:47:46 -0300] [24894] [INFO] Starting gunicorn 25.3.0
+[2026-04-14 22:47:46 -0300] [24894] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:47:46 -0300] [24894] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:47:47 -0300] [24894] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:47:47 -0300] [24894] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:47:48 -0300] [24894] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:47:48 -0300] [24894] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:47:49 -0300] [24894] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:47:49 -0300] [24894] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:47:51 -0300] [24894] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:47:51 -0300] [24894] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:47:52 -0300] [24894] [ERROR] Can't connect to ('127.0.0.1', 5001)
+[2026-04-14 22:47:57 -0300] [24912] [INFO] Starting gunicorn 25.3.0
+[2026-04-14 22:47:57 -0300] [24912] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:47:57 -0300] [24912] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:47:58 -0300] [24912] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:47:58 -0300] [24912] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:47:59 -0300] [24912] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:47:59 -0300] [24912] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:00 -0300] [24912] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:00 -0300] [24912] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:01 -0300] [24912] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:01 -0300] [24912] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:02 -0300] [24912] [ERROR] Can't connect to ('127.0.0.1', 5001)
+[2026-04-14 22:48:07 -0300] [26183] [INFO] Starting gunicorn 25.3.0
+[2026-04-14 22:48:07 -0300] [26183] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:07 -0300] [26183] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:08 -0300] [26183] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:08 -0300] [26183] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:09 -0300] [26183] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:09 -0300] [26183] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:10 -0300] [26183] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:10 -0300] [26183] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:11 -0300] [26183] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:11 -0300] [26183] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:12 -0300] [26183] [ERROR] Can't connect to ('127.0.0.1', 5001)
+[2026-04-14 22:48:17 -0300] [26201] [INFO] Starting gunicorn 25.3.0
+[2026-04-14 22:48:17 -0300] [26201] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:17 -0300] [26201] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:18 -0300] [26201] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:18 -0300] [26201] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:19 -0300] [26201] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:19 -0300] [26201] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:21 -0300] [26201] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:21 -0300] [26201] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:22 -0300] [26201] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:22 -0300] [26201] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:23 -0300] [26201] [ERROR] Can't connect to ('127.0.0.1', 5001)
+[2026-04-14 22:48:28 -0300] [26467] [INFO] Starting gunicorn 25.3.0
+[2026-04-14 22:48:28 -0300] [26467] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:28 -0300] [26467] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:29 -0300] [26467] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:29 -0300] [26467] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:30 -0300] [26467] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:30 -0300] [26467] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:31 -0300] [26467] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:31 -0300] [26467] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:32 -0300] [26467] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:32 -0300] [26467] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:33 -0300] [26467] [ERROR] Can't connect to ('127.0.0.1', 5001)
+[2026-04-14 22:48:38 -0300] [26477] [INFO] Starting gunicorn 25.3.0
+[2026-04-14 22:48:38 -0300] [26477] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:38 -0300] [26477] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:39 -0300] [26477] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:39 -0300] [26477] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:40 -0300] [26477] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:40 -0300] [26477] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:41 -0300] [26477] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:41 -0300] [26477] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:42 -0300] [26477] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:42 -0300] [26477] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:43 -0300] [26477] [ERROR] Can't connect to ('127.0.0.1', 5001)
+[2026-04-14 22:48:49 -0300] [26484] [INFO] Starting gunicorn 25.3.0
+[2026-04-14 22:48:49 -0300] [26484] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:49 -0300] [26484] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:50 -0300] [26484] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:50 -0300] [26484] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:51 -0300] [26484] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:51 -0300] [26484] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:52 -0300] [26484] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:52 -0300] [26484] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:53 -0300] [26484] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:53 -0300] [26484] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:48:54 -0300] [26484] [ERROR] Can't connect to ('127.0.0.1', 5001)
+[2026-04-14 22:48:59 -0300] [26507] [INFO] Starting gunicorn 25.3.0
+[2026-04-14 22:48:59 -0300] [26507] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:48:59 -0300] [26507] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:00 -0300] [26507] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:00 -0300] [26507] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:01 -0300] [26507] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:01 -0300] [26507] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:02 -0300] [26507] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:02 -0300] [26507] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:03 -0300] [26507] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:03 -0300] [26507] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:04 -0300] [26507] [ERROR] Can't connect to ('127.0.0.1', 5001)
+[2026-04-14 22:49:09 -0300] [26527] [INFO] Starting gunicorn 25.3.0
+[2026-04-14 22:49:09 -0300] [26527] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:09 -0300] [26527] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:10 -0300] [26527] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:10 -0300] [26527] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:11 -0300] [26527] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:11 -0300] [26527] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:12 -0300] [26527] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:12 -0300] [26527] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:13 -0300] [26527] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:13 -0300] [26527] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:15 -0300] [26527] [ERROR] Can't connect to ('127.0.0.1', 5001)
+[2026-04-14 22:49:20 -0300] [26550] [INFO] Starting gunicorn 25.3.0
+[2026-04-14 22:49:20 -0300] [26550] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:20 -0300] [26550] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:21 -0300] [26550] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:21 -0300] [26550] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:22 -0300] [26550] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:22 -0300] [26550] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:23 -0300] [26550] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:23 -0300] [26550] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:24 -0300] [26550] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:24 -0300] [26550] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:25 -0300] [26550] [ERROR] Can't connect to ('127.0.0.1', 5001)
+[2026-04-14 22:49:30 -0300] [26568] [INFO] Starting gunicorn 25.3.0
+[2026-04-14 22:49:30 -0300] [26568] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:30 -0300] [26568] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:31 -0300] [26568] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:31 -0300] [26568] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:32 -0300] [26568] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:32 -0300] [26568] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:33 -0300] [26568] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:33 -0300] [26568] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:34 -0300] [26568] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:34 -0300] [26568] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:35 -0300] [26568] [ERROR] Can't connect to ('127.0.0.1', 5001)
+[2026-04-14 22:49:40 -0300] [26826] [INFO] Starting gunicorn 25.3.0
+[2026-04-14 22:49:40 -0300] [26826] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:40 -0300] [26826] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:42 -0300] [26826] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:42 -0300] [26826] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:43 -0300] [26826] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:43 -0300] [26826] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:44 -0300] [26826] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:44 -0300] [26826] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:45 -0300] [26826] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:45 -0300] [26826] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:46 -0300] [26826] [ERROR] Can't connect to ('127.0.0.1', 5001)
+[2026-04-14 22:49:51 -0300] [26851] [INFO] Starting gunicorn 25.3.0
+[2026-04-14 22:49:51 -0300] [26851] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:51 -0300] [26851] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:52 -0300] [26851] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:52 -0300] [26851] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:53 -0300] [26851] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:53 -0300] [26851] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:54 -0300] [26851] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:54 -0300] [26851] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:55 -0300] [26851] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:49:55 -0300] [26851] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:49:56 -0300] [26851] [ERROR] Can't connect to ('127.0.0.1', 5001)
+[2026-04-14 22:50:01 -0300] [26873] [INFO] Starting gunicorn 25.3.0
+[2026-04-14 22:50:01 -0300] [26873] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:01 -0300] [26873] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:02 -0300] [26873] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:02 -0300] [26873] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:03 -0300] [26873] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:03 -0300] [26873] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:04 -0300] [26873] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:04 -0300] [26873] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:05 -0300] [26873] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:05 -0300] [26873] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:06 -0300] [26873] [ERROR] Can't connect to ('127.0.0.1', 5001)
+[2026-04-14 22:50:12 -0300] [27384] [INFO] Starting gunicorn 25.3.0
+[2026-04-14 22:50:12 -0300] [27384] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:12 -0300] [27384] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:13 -0300] [27384] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:13 -0300] [27384] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:14 -0300] [27384] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:14 -0300] [27384] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:15 -0300] [27384] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:15 -0300] [27384] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:16 -0300] [27384] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:16 -0300] [27384] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:17 -0300] [27384] [ERROR] Can't connect to ('127.0.0.1', 5001)
+[2026-04-14 22:50:22 -0300] [27400] [INFO] Starting gunicorn 25.3.0
+[2026-04-14 22:50:22 -0300] [27400] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:22 -0300] [27400] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:23 -0300] [27400] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:23 -0300] [27400] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:24 -0300] [27400] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:24 -0300] [27400] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:25 -0300] [27400] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:25 -0300] [27400] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:26 -0300] [27400] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:26 -0300] [27400] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:27 -0300] [27400] [ERROR] Can't connect to ('127.0.0.1', 5001)
+[2026-04-14 22:50:32 -0300] [27407] [INFO] Starting gunicorn 25.3.0
+[2026-04-14 22:50:32 -0300] [27407] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:32 -0300] [27407] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:34 -0300] [27407] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:34 -0300] [27407] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:35 -0300] [27407] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:35 -0300] [27407] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:36 -0300] [27407] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:36 -0300] [27407] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:37 -0300] [27407] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:37 -0300] [27407] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:38 -0300] [27407] [ERROR] Can't connect to ('127.0.0.1', 5001)
+[2026-04-14 22:50:43 -0300] [27416] [INFO] Starting gunicorn 25.3.0
+[2026-04-14 22:50:43 -0300] [27416] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:43 -0300] [27416] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:44 -0300] [27416] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:44 -0300] [27416] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:45 -0300] [27416] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:45 -0300] [27416] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:46 -0300] [27416] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:46 -0300] [27416] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:47 -0300] [27416] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:47 -0300] [27416] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:48 -0300] [27416] [ERROR] Can't connect to ('127.0.0.1', 5001)
+[2026-04-14 22:50:53 -0300] [27434] [INFO] Starting gunicorn 25.3.0
+[2026-04-14 22:50:53 -0300] [27434] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:53 -0300] [27434] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:54 -0300] [27434] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:54 -0300] [27434] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:55 -0300] [27434] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:55 -0300] [27434] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:56 -0300] [27434] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:56 -0300] [27434] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:58 -0300] [27434] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:50:58 -0300] [27434] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
+[2026-04-14 22:50:59 -0300] [27434] [ERROR] Can't connect to ('127.0.0.1', 5001)
+[2026-04-14 22:51:04 -0300] [27441] [INFO] Starting gunicorn 25.3.0
+[2026-04-14 22:51:04 -0300] [27441] [ERROR] Connection in use: ('127.0.0.1', 5001)
+[2026-04-14 22:51:04 -0300] [27441] [ERROR] connection to ('127.0.0.1', 5001) failed: [Errno 48] Address already in use
