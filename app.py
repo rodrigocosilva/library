@@ -6,8 +6,13 @@ import sqlite3
 from flask import Flask, request, jsonify, render_template, send_from_directory, Response
 from werkzeug.utils import secure_filename
 from database import get_db, init_db
+from otel_config import setup_otel
+from opentelemetry import trace
 
 app = Flask(__name__)
+setup_otel(app)
+tracer = trace.get_tracer(__name__)
+
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16 MB max upload
 
 UPLOAD_DIR = os.path.join(os.path.dirname(__file__), 'uploads', 'covers')
@@ -192,18 +197,21 @@ def api_books_create():
     cover_file = request.files.get('cover')
     cover = save_cover(cover_file)
 
-    db = get_db()
-    try:
-        cur = db.execute(
-            """INSERT INTO books (title, author, genre, publisher, year, type, pages, cover, rating, status)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-            (title, author, genre, publisher, year, book_type, pages, cover, rating, status)
-        )
-        db.commit()
-        book = db.execute("SELECT * FROM books WHERE id = ?", (cur.lastrowid,)).fetchone()
-        return jsonify(book_row_to_dict(book)), 201
-    finally:
-        db.close()
+    with tracer.start_as_current_span("books.create") as span:
+        span.set_attribute("book.type", book_type)
+        span.set_attribute("book.status", status)
+        db = get_db()
+        try:
+            cur = db.execute(
+                """INSERT INTO books (title, author, genre, publisher, year, type, pages, cover, rating, status)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                (title, author, genre, publisher, year, book_type, pages, cover, rating, status)
+            )
+            db.commit()
+            book = db.execute("SELECT * FROM books WHERE id = ?", (cur.lastrowid,)).fetchone()
+            return jsonify(book_row_to_dict(book)), 201
+        finally:
+            db.close()
 
 
 @app.route('/api/books/<int:book_id>', methods=['GET'])
@@ -286,65 +294,67 @@ def api_books_delete(book_id):
 
 @app.route('/api/export/csv')
 def export_csv():
-    db = get_db()
-    try:
-        rows = db.execute(
-            "SELECT id, title, author, genre, publisher, year, type, pages, rating, status, created_at FROM books ORDER BY created_at"
-        ).fetchall()
-    finally:
-        db.close()
+    with tracer.start_as_current_span("books.export_csv"):
+        db = get_db()
+        try:
+            rows = db.execute(
+                "SELECT id, title, author, genre, publisher, year, type, pages, rating, status, created_at FROM books ORDER BY created_at"
+            ).fetchall()
+        finally:
+            db.close()
 
-    STATUS_PT = {'unread': 'Não lido', 'read': 'Lido', 'abandoned': 'Abandonado', 'borrowed': 'Emprestado'}
-    TYPE_PT   = {'physical': 'Físico', 'ebook': 'E-book'}
+        STATUS_PT = {'unread': 'Não lido', 'read': 'Lido', 'abandoned': 'Abandonado', 'borrowed': 'Emprestado'}
+        TYPE_PT   = {'physical': 'Físico', 'ebook': 'E-book'}
 
-    output = io.StringIO()
-    writer = csv.writer(output, delimiter=';', quoting=csv.QUOTE_MINIMAL)
-    writer.writerow(['ID', 'Título', 'Autor', 'Gênero', 'Editora', 'Ano', 'Tipo', 'Páginas', 'Nota', 'Estado', 'Cadastrado em'])
-    for r in rows:
-        writer.writerow([
-            r['id'],
-            r['title'],
-            r['author'],
-            r['genre'] or '',
-            r['publisher'] or '',
-            r['year'] or '',
-            TYPE_PT.get(r['type'], r['type']),
-            r['pages'] or '',
-            r['rating'] or '',
-            STATUS_PT.get(r['status'], r['status']),
-            r['created_at'],
-        ])
+        output = io.StringIO()
+        writer = csv.writer(output, delimiter=';', quoting=csv.QUOTE_MINIMAL)
+        writer.writerow(['ID', 'Título', 'Autor', 'Gênero', 'Editora', 'Ano', 'Tipo', 'Páginas', 'Nota', 'Estado', 'Cadastrado em'])
+        for r in rows:
+            writer.writerow([
+                r['id'],
+                r['title'],
+                r['author'],
+                r['genre'] or '',
+                r['publisher'] or '',
+                r['year'] or '',
+                TYPE_PT.get(r['type'], r['type']),
+                r['pages'] or '',
+                r['rating'] or '',
+                STATUS_PT.get(r['status'], r['status']),
+                r['created_at'],
+            ])
 
-    csv_bytes = output.getvalue().encode('utf-8-sig')  # utf-8-sig for Excel compatibility
-    return Response(
-        csv_bytes,
-        mimetype='text/csv',
-        headers={'Content-Disposition': 'attachment; filename="biblioteca.csv"'}
-    )
+        csv_bytes = output.getvalue().encode('utf-8-sig')  # utf-8-sig for Excel compatibility
+        return Response(
+            csv_bytes,
+            mimetype='text/csv',
+            headers={'Content-Disposition': 'attachment; filename="biblioteca.csv"'}
+        )
 
 
 @app.route('/api/stats')
 def api_stats():
-    db = get_db()
-    try:
-        by_status = db.execute(
-            "SELECT status, COUNT(*) as count FROM books GROUP BY status ORDER BY count DESC"
-        ).fetchall()
-        by_rating = db.execute(
-            "SELECT rating, COUNT(*) as count FROM books GROUP BY rating ORDER BY rating"
-        ).fetchall()
-        total = db.execute("SELECT COUNT(*) as count FROM books").fetchone()['count']
-        by_type = db.execute(
-            "SELECT type, COUNT(*) as count FROM books GROUP BY type"
-        ).fetchall()
-        return jsonify({
-            'total': total,
-            'by_status': [dict(r) for r in by_status],
-            'by_rating': [dict(r) for r in by_rating],
-            'by_type': [dict(r) for r in by_type],
-        })
-    finally:
-        db.close()
+    with tracer.start_as_current_span("books.stats"):
+        db = get_db()
+        try:
+            by_status = db.execute(
+                "SELECT status, COUNT(*) as count FROM books GROUP BY status ORDER BY count DESC"
+            ).fetchall()
+            by_rating = db.execute(
+                "SELECT rating, COUNT(*) as count FROM books GROUP BY rating ORDER BY rating"
+            ).fetchall()
+            total = db.execute("SELECT COUNT(*) as count FROM books").fetchone()['count']
+            by_type = db.execute(
+                "SELECT type, COUNT(*) as count FROM books GROUP BY type"
+            ).fetchall()
+            return jsonify({
+                'total': total,
+                'by_status': [dict(r) for r in by_status],
+                'by_rating': [dict(r) for r in by_rating],
+                'by_type': [dict(r) for r in by_type],
+            })
+        finally:
+            db.close()
 
 
 if __name__ == '__main__':
