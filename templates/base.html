@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biblioteca Pessoal</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <script>
+    // Apply theme before paint to avoid flash
+    (function(){
+      var t = localStorage.getItem('theme');
+      var dark = t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
+</head>
+<body>
+
+<!-- ── Sidebar ── -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <span>Biblioteca</span>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="/" class="nav-item {% if page == 'home' %}active{% endif %}">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Início</span>
+    </a>
+    <a href="/physical" class="nav-item {% if page == 'physical' %}active{% endif %}">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      <span>Físicos</span>
+    </a>
+    <a href="/ebooks" class="nav-item {% if page == 'ebooks' %}active{% endif %}">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      <span>E-books</span>
+    </a>
+    <a href="/stats" class="nav-item {% if page == 'stats' %}active{% endif %}">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      <span>Estatísticas</span>
+    </a>
+  </nav>
+
+  <div class="sidebar-bottom">
+    <button class="btn-new" onclick="openModal()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      Novo Livro
+    </button>
+  </div>
+</aside>
+
+<!-- ── Main ── -->
+<div class="main-wrapper">
+  <header class="topbar">
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" class="search-input" placeholder="Buscar por título, autor ou editora…" autocomplete="off" />
+    </div>
+    <div class="topbar-right">
+      <a href="/api/export/csv" class="btn-export" download="biblioteca.csv" title="Exportar CSV">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Exportar CSV
+      </a>
+      <button class="btn-icon" id="theme-toggle" title="Alternar tema" onclick="toggleTheme()">
+        <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="content">
+    {% block content %}{% endblock %}
+  </main>
+</div>
+
+<!-- ── Modal ── -->
+<div id="modal-overlay" class="modal-overlay hidden" onclick="closeModalOnOverlay(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="modal-title">Novo Livro</h2>
+      <button class="modal-close" onclick="closeModal()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <form id="book-form" enctype="multipart/form-data" onsubmit="submitBook(event)">
+      <input type="hidden" id="book-id" name="book_id" value="" />
+
+      <div class="form-row">
+        <!-- Cover upload -->
+        <div class="cover-upload-area" onclick="document.getElementById('cover-input').click()">
+          <img id="cover-preview" src="/static/img/placeholder.svg" alt="Capa" />
+          <div class="cover-upload-hint">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <span>Capa (jpg/png)</span>
+          </div>
+          <input type="file" id="cover-input" name="cover" accept=".jpg,.jpeg,.png" style="display:none" onchange="previewCover(event)" />
+        </div>
+
+        <!-- Fields -->
+        <div class="form-fields">
+          <div class="form-group">
+            <label>Título *</label>
+            <input type="text" name="title" id="f-title" required />
+          </div>
+          <div class="form-group">
+            <label>Autor *</label>
+            <input type="text" name="author" id="f-author" required />
+          </div>
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label>Gênero</label>
+              <input type="text" name="genre" id="f-genre" />
+            </div>
+            <div class="form-group">
+              <label>Editora</label>
+              <input type="text" name="publisher" id="f-publisher" />
+            </div>
+          </div>
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label>Ano</label>
+              <input type="number" name="year" id="f-year" min="1000" max="2099" />
+            </div>
+            <div class="form-group">
+              <label>Páginas</label>
+              <input type="number" name="pages" id="f-pages" min="1" />
+            </div>
+          </div>
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label>Tipo *</label>
+              <select name="type" id="f-type">
+                <option value="physical">Físico</option>
+                <option value="ebook">E-book</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Estado *</label>
+              <select name="status" id="f-status">
+                <option value="unread">Não lido</option>
+                <option value="read">Lido</option>
+                <option value="abandoned">Abandonado</option>
+                <option value="borrowed">Emprestado</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Nota</label>
+            <div class="star-picker" id="star-picker">
+              <button type="button" data-val="1">★</button>
+              <button type="button" data-val="2">★</button>
+              <button type="button" data-val="3">★</button>
+              <button type="button" data-val="4">★</button>
+              <button type="button" data-val="5">★</button>
+            </div>
+            <input type="hidden" name="rating" id="f-rating" value="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="closeModal()">Cancelar</button>
+        <button type="submit" class="btn-primary" id="btn-submit">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/static/js/modal.js"></script>
+<script src="/static/js/main.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="page-header">
+  <div>
+    <h1 class="page-title">Estatísticas</h1>
+    <p class="page-sub" id="stats-total">Carregando…</p>
+  </div>
+</div>
+
+<div class="stats-grid">
+  <!-- Summary cards -->
+  <div class="stat-cards" id="stat-cards"></div>
+
+  <!-- Charts row -->
+  <div class="charts-row">
+    <div class="chart-card">
+      <h3 class="chart-title">Por Estado</h3>
+      <div class="chart-wrap">
+        <canvas id="chart-status"></canvas>
+      </div>
+      <div id="legend-status" class="chart-legend"></div>
+    </div>
+    <div class="chart-card">
+      <h3 class="chart-title">Por Nota</h3>
+      <div class="chart-wrap">
+        <canvas id="chart-rating"></canvas>
+      </div>
+      <div id="legend-rating" class="chart-legend"></div>
+    </div>
+  </div>
+
+  <!-- Type split -->
+  <div class="chart-card chart-card--wide">
+    <h3 class="chart-title">Físicos vs E-books</h3>
+    <div class="chart-wrap chart-wrap--sm">
+      <canvas id="chart-type"></canvas>
+    </div>
+    <div id="legend-type" class="chart-legend"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="/static/js/stats.js"></script>
+{% endblock %}

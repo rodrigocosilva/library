@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="page-header">
+  <div>
+    <h1 class="page-title">Início</h1>
+    <p class="page-sub" id="books-count">Carregando…</p>
+  </div>
+  <div class="filter-bar">
+    <select id="filter-status" onchange="applyFilters()">
+      <option value="">Todos os estados</option>
+      <option value="unread">Não lido</option>
+      <option value="read">Lido</option>
+      <option value="abandoned">Abandonado</option>
+      <option value="borrowed">Emprestado</option>
+    </select>
+    <select id="filter-sort" onchange="applyFilters()">
+      <option value="created_at">Mais recentes</option>
+      <option value="title">Título A-Z</option>
+      <option value="author">Autor A-Z</option>
+      <option value="year">Ano</option>
+      <option value="rating">Nota</option>
+    </select>
+  </div>
+</div>
+
+<div id="books-grid" class="books-grid">
+  <div class="loading-state">
+    <div class="spinner"></div>
+    <p>Carregando livros…</p>
+  </div>
+</div>
+
+<div id="load-more-wrap" class="load-more-wrap hidden">
+  <button class="btn-load-more" onclick="loadMore()">Carregar mais</button>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/books.js"></script>
+<script>
+  initBooksPage({ type: null });
+</script>
+{% endblock %}
