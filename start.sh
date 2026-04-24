@@ -7,6 +7,6 @@ if [ ! -d "venv" ]; then
   venv/bin/pip install -r requirements.txt -q
 fi
 
-echo "Iniciando Biblioteca Pessoal em http://localhost:5001"
-open "http://localhost:5001" 2>/dev/null || true
+echo "Iniciando Biblioteca Pessoal em http://localhost:5003"
+open "http://localhost:5003" 2>/dev/null || true
 venv/bin/python app.py

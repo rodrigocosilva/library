@@ -66,7 +66,7 @@ cd biblioteca-pessoal
 ./start.sh
 ```
 
-O script cria automaticamente o ambiente virtual, instala as dependências e abre o navegador em `http://localhost:5001`.
+O script cria automaticamente o ambiente virtual, instala as dependências e abre o navegador em `http://localhost:5003`.
 
 ### Ou manualmente:
 
@@ -77,7 +77,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-Acesse `http://localhost:5001` no navegador.
+Acesse `http://localhost:5003` no navegador.
 
 ---
 
@@ -150,7 +150,7 @@ A aplicação expõe uma API REST simples para quem quiser integrar ou automatiz
 ### Exemplo — cadastrar um livro via curl
 
 ```bash
-curl -X POST http://localhost:5001/api/books \
+curl -X POST http://localhost:5003/api/books \
   -F "title=Dom Casmurro" \
   -F "author=Machado de Assis" \
   -F "genre=Romance" \
@@ -165,7 +165,7 @@ curl -X POST http://localhost:5001/api/books \
 ### Exemplo — buscar por autor
 
 ```bash
-curl "http://localhost:5001/api/books?q=machado"
+curl "http://localhost:5003/api/books?q=machado"
 ```
 
 ---
@@ -226,5 +226,5 @@ Se o collector não estiver acessível, a aplicação continua funcionando norma
 ## Observações
 
 - O banco de dados e as capas **não são versionados** no Git (listados no `.gitignore`). Faça backups manuais periodicamente.
-- Em macOS, a porta 5000 é ocupada pelo AirPlay — por isso a aplicação roda na **porta 5001**.
+- Em macOS, a porta 5000 é ocupada pelo AirPlay e a porta 5001 pelo Datadog Agent — por isso a aplicação roda na **porta 5003**.
 - A busca usa FTS5, disponível no SQLite 3.9+ (incluso no Python 3.8+).

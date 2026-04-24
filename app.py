@@ -360,4 +360,4 @@ def api_stats():
 if __name__ == '__main__':
     os.makedirs(UPLOAD_DIR, exist_ok=True)
     init_db()
-    app.run(debug=True, port=5001)
+    app.run(debug=True, port=5003)
